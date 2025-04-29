@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "ea99367a-b888-461c-b6c2-c79063b09b90",
+		"name": "Biblioteca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43287986"
+	},
+	"item": [
+		{
+			"name": "ver libros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/libros",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver un libro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/libros/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"libros",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear libro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Sed ut id. a\",\r\n    \"autor\": \"Loy Wiegande\",\r\n    \"editorial\": \"Goldner LLCe\",\r\n    \"isbn\": \"9792904638460\",\r\n    \"fecha_publicacion\": \"2005-08-03\",\r\n    \"numero_paginas\": 479\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/libros",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar un libro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"ayer llore\",\r\n    \"autor\": \"Jacobo el monte\",\r\n    \"editorial\": \"bob marlery\",\r\n    \"isbn\": \"9784190587567\"\r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/libros/11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"libros",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar un libro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"ayer llore\",\r\n    \"autor\": \"Jacobo el monte\",\r\n    \"editorial\": \"bob marlery\",\r\n    \"isbn\": \"9784190587567\"\r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/libros/11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"libros",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver lectores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"ayer llore\",\r\n    \"autor\": \"Jacobo el monte\",\r\n    \"editorial\": \"bob marlery\",\r\n    \"isbn\": \"9784190587567\"\r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lectors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver un lector",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"ayer llore\",\r\n    \"autor\": \"Jacobo el monte\",\r\n    \"editorial\": \"bob marlery\",\r\n    \"isbn\": \"9784190587567\"\r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lectors/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lectors",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear un lector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Adriqan\",\r\n    \"apellidos\": \"Riquelme\",\r\n    \"sexo\": \"hombre\",\r\n    \"correo\": \"schaden.nya@example.gmail\",\r\n    \"celular\": \"+1 (203) 455-8134\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lectors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar lector",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"pablon\",\r\n    \"apellidos\": \"Riquelme\",\r\n    \"sexo\": \"hombre\",\r\n    \"correo\": \"schaden.nya@example.gmail\",\r\n    \"celular\": \"+1 (203) 455-8134\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lectors/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lectors",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un lector",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Adrian\",\r\n    \"apellidos\": \"Riquelson\",\r\n    \"sexo\": \"hombre\",\r\n    \"correo\": \"schaden.nya@example.gmail.bo\",\r\n    \"celular\": \"+1 (203) 455-8511\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lectors/11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lectors",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
