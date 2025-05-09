@@ -22,3 +22,18 @@ php artisan migrate:fresh --seed
 
 ## hacer correr la api
 php artisan serve
+
+# Instalar JWT
+# Dara seguridad a la api  vamos firebase/php-jwt
+composer require firebase/php-jwt
+
+# Crear el midleware 
+php artisan make:middleware JwtMiddleware
+
+# Escribir codigo del midleware
+
+# Proteger las rutasincluyendo 
+->middleware(JwtMiddleware::class)
+
+# crear el controlador para login
+php artisan make:controller LoginController

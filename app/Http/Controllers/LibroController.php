@@ -21,7 +21,15 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // recuperar los datos del request parametro usuario
+        $usuario = $request->attributes->get('usuario');
+        $rol = $request->attributes->get('rol');
+        $nombre = $request->attributes->get('nombre');
+
+        if ($rol != 'administrador') {
+            return response()->json(['mensaje' => 'No tienes permisos para crear un libro'], 403);
+        }
+
         $input = $request->all();
         $libro = Libro::create($input);
         return response()->json($libro, 201);

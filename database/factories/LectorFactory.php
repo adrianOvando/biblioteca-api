@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lector>
@@ -17,10 +18,9 @@ class LectorFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->firstName(),
+            'user_id' => User::factory(), 
             'apellidos' => $this->faker->lastName(),
             'sexo' => $this->faker->randomElement(['hombre', 'mujer']),
-            'correo' => $this->faker->unique()->safeEmail(),
             'celular' => $this->faker->phoneNumber(),
         ];
     }
