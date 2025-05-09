@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "49cbed63-3883-4877-a265-560cae896c73",
+		"name": "Para JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43287986"
+	},
+	"item": [
+		{
+			"name": "Login admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Verifica si la respuesta es exitosa\r",
+							"if (pm.response.code === 200) {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    // Guarda el token y otros datos en variables\r",
+							"    pm.environment.set(\"jwt_token\", responseData.token);\r",
+							"    pm.environment.set(\"usuario_actual\", responseData.usuario.email);\r",
+							"    pm.environment.set(\"rol_usuario\", responseData.usuario.rol);\r",
+							"    \r",
+							"    // Mensaje de confirmación\r",
+							"    console.log(\"🔑 Token guardado en 'jwt_token'\");\r",
+							"    console.log(\"👤 Usuario: \" + responseData.usuario.email);\r",
+							"    console.log(\"🕒 Expira: \" + new Date(responseData.expires * 1000).toLocaleTimeString());\r",
+							"} else {\r",
+							"    console.error(\"❌ Error: \" + pm.response.text());\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"email\" : \"admin@sis258.com\",\r\n    \"password\" : \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Verifica si la respuesta es exitosa\r",
+							"if (pm.response.code === 200) {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    // Guarda el token y otros datos en variables\r",
+							"    pm.environment.set(\"jwt_token\", responseData.token);\r",
+							"    pm.environment.set(\"usuario_actual\", responseData.usuario.email);\r",
+							"    pm.environment.set(\"rol_usuario\", responseData.usuario.rol);\r",
+							"    \r",
+							"    // Mensaje de confirmación\r",
+							"    console.log(\"🔑 Token guardado en 'jwt_token'\");\r",
+							"    console.log(\"👤 Usuario: \" + responseData.usuario.email);\r",
+							"    console.log(\"🕒 Expira: \" + new Date(responseData.expires * 1000).toLocaleTimeString());\r",
+							"} else {\r",
+							"    console.error(\"❌ Error: \" + pm.response.text());\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"email\" : \"admin@sis258.com\",\r\n    \"password\" : \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crud",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-11-20\",\r\n    \"lectorId\": 4,  \r\n    \"libros\": [6, 8],  \r\n    \"fechaDevolucion\": \"2023-11-27\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/prestamos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prestamos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Prestamos usuario",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
